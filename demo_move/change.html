@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+	#box{ width:700px;height:400px;margin:20px auto; background:url(images/fk_0.jpg) no-repeat; position:relative;}
+	#box span{width:100px;height:100px;background:url(url(images/fk_0.jpg) no-repeat;  position:absolute; opacity:0;}
+</style>
+<script src="js/move7.js"></script>
+<script>
+	window.onload = function(){
+		
+		var oDiv = document.getElementById('box');
+		
+		var row = 7;
+		var col = 4;
+		
+		for(var r = 0;r<row;r++){
+			for(var c = 0;c<col;c++){
+				var oSpan = document.createElement('span');
+				oSpan.style.width = oDiv.offsetWidth/col+'px';
+				oSpan.style.height = oDiv.offsetHeight/row +'px';
+				oDiv.appendChild(oSpan);
+				oSpan.style.left = c*oSpan.offsetWidth+'px';
+				oSpan.style.top =  r*oSpan.offsetHeight+'px';
+				oSpan.style.backgroundPosition = '-'+oSpan.offsetLeft+'px -'+oSpan.offsetTop+'px';
+				oSpan.r = r;
+				oSpan.c = c;
+				
+			}
+		}
+		
+		var oBtn = document.getElementById('btn');
+		var timer = null;
+		var iNow = 0;
+		var bOk = false;
+		oBtn.onclick = function(){
+			if(bOk)return;
+			bOk = true;
+			var aSpan = oDiv.children;
+			var i = 0;
+			iNow++;
+			
+			if(iNow%3 == 0){
+				
+				oDiv.style.background = 'url(images/fk_2.jpg)';
+			}else{
+			
+				oDiv.style.background = 'url(images/fk_'+(iNow%3-1)+'.jpg)';
+			}
+			clearInterval(timer);
+			for(var i = 0;i<aSpan.length;i++){
+				(function(index){
+					setTimeout(function(){
+						aSpan[index].style.backgroundImage = 'url(images/fk_'+iNow%3+'.jpg)';
+						aSpan[index].style.opacity = 0;
+						move(aSpan[index],{opacity:1});
+						i++;
+						
+					},100*(aSpan[index].r+aSpan[index].c));
+				})(i);
+				
+			}
+			bOk = false;
+		};
+				
+	};
+</script>
+</head>
+<body>
+	<input type="button" value="换一个" id="btn">
+	<div id="box">
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+body{ width:600px; height:800px; margin:50px auto; background:#000;}
+#div1 img{ width:200px; height:240px;}
+div{ float:left; width:200px; height:240px; border:1px solid #f90; overflow:hidden;}
+#div1{ width:200px; height:240px; position:relative;}
+p{ width:80px; height:80px; background:rgba(153,204,204,1); opacity:.5; position:absolute; left:0; top:0; display:none;}
+#div2{ width:200px; height:240px; background:#ccc; margin-left:30px; overflow:hidden; display:none; position:relative;}
+#big{ position:absolute; left:0; top:0;}
+</style>
+<script>
+window.onload =function(){
+	var oDiv1 = document.getElementById('div1');
+	var oDiv2 = document.getElementById('div2');
+	var oBig = document.getElementById('big');
+	var oP = oDiv1.children[0];
+	oDiv1.onmouseover = function(ev){
+		var oEvent = ev||event;
+		var oFrom = oEvent.fromElement||oEvent.relatedTarget;
+		if(oDiv1.contains(oFrom)){
+			return ;	
+		}
+		oP.style.display = 'block';
+		oDiv2.style.display = 'block';	
+	};
+	oDiv1.onmouseout = function(ev){
+		var oEvent = ev||event;
+		var oFrom = oEvent.fromElement||oEvent.relatedTarget;
+		if(oDiv1.contains(oFrom)){
+			return ;	
+		}
+		oDiv2.style.display = 'none';
+		oP.style.display = 'none';	
+	};
+	oDiv1.onmousemove = function(ev){
+		var oEvent = ev||event;
+		var t = oEvent.clientY - oDiv1.offsetTop- oP.offsetHeight/2;
+		var l = oEvent.clientX -oDiv1.offsetLeft - oP.offsetWidth/2;
+		if(t<0){
+			t = 0;	
+		}else if(t>oDiv1.offsetHeight - oP.offsetHeight){
+			t=oDiv1.offsetHeight - oP.offsetHeight;	
+		}
+		if(l<0){
+			l=0;	
+		}else if(l>oDiv1.offsetWidth -  oP.offsetWidth){
+			l = oDiv1.offsetWidth - oP.offsetWidth;	
+		}
+		oP.style.top = t+ 'px';
+		oP.style.left =l+ 'px';
+		
+		oBig.style.left = -l*(oBig.offsetWidth - oDiv2.offsetWidth)/(oDiv1.offsetWidth - oP.offsetWidth) + 'px';
+		oBig.style.top = -t*(oBig.offsetHeight - oDiv2.offsetHeight)/(oDiv1.offsetHeight - oP.offsetHeight) + 'px';
+	};	
+};
+</script>
+</head>
+
+<body>
+	<div id="div1">
+        <p></p>    
+        <img src="images/tw1.jpg" />
+    </div>
+    <div id="div2"><img  id="big"src="images/tw1.jpg" /></div>
+</body>
+</html>

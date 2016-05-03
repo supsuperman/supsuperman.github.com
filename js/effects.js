@@ -1,0 +1,3 @@
+// JavaScript Document
+jQuery(window).load(function(){delay();});function delay(){var secs=500;setTimeout('initFadeIn()',secs);}function initFadeIn(){jQuery("#city").css("visibility","visible");jQuery("#city").css("display","none");jQuery("#city").fadeIn(1000);$.scrollTo('#home',1000);}$('#citynavigation').localScroll({axis:'xy',queue:false,hash:true,duration:1500,stop:true,easing:'easeInOutQuad'})
+$(function(){$('#citynavigation a').click(function(){$('#citynavigation a').removeClass('active');$(this).addClass('active');});});

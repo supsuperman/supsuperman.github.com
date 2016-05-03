@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; }
+body{ width:650px; margin:0 auto; background:#ccc;}
+img{ width:310px; height:310px; }
+</style>
+<script>
+window.onload = window.onscroll = window.onresize = function(){
+	var aImg = document.getElementsByTagName('img');
+	var sT = document.documentElement.scrollTop||document.body.scrollTop;
+	var cH = document.documentElement.clientHeight;
+	function getPos (obj){
+		var t = 0;
+		while(obj){
+			t+=obj.offsetTop;
+			obj=obj.offsetParent	
+		}	
+		return t;
+	}
+	for(var i = 0; i<aImg.length; i++){
+		var oT = getPos(aImg[i]);	
+		//console.log(oT);
+		if(oT < sT + cH){
+			aImg[i].src = aImg[i].getAttribute('_src');	
+		}
+	}	
+};
+</script>
+</head>
+
+<body>
+	<img _src="images/m1.jpg" alt="" >
+	<img _src="images/m2.jpg" alt="" >
+	<img _src="images/m3.jpg" alt="" >
+	<img _src="images/m4.jpg" alt="" >
+	<img _src="images/m5.jpg" alt="" >
+	<img _src="images/m6.jpg" alt="" >
+	<img _src="images/m7.jpg" alt="" >
+	<img _src="images/m8.jpg" alt="" >
+	<img _src="images/m9.jpg" alt="" >
+	<img _src="images/m10.jpg" alt="" >
+	<img _src="images/m1.jpg" alt="" >
+	<img _src="images/m2.jpg" alt="" >
+	<img _src="images/m3.jpg" alt="" >
+	<img _src="images/m4.jpg" alt="" >
+	<img _src="images/m5.jpg" alt="" >
+	<img _src="images/m6.jpg" alt="" >
+	<img _src="images/m7.jpg" alt="" >
+	<img _src="images/m8.jpg" alt="" >
+	<img _src="images/m9.jpg" alt="" >
+	<img _src="images/m10.jpg" alt="" >
+	<img _src="images/m1.jpg" alt="" >
+	<img _src="images/m2.jpg" alt="" >
+	<img _src="images/m3.jpg" alt="" >
+	<img _src="images/m4.jpg" alt="" >
+	<img _src="images/m5.jpg" alt="" >
+	<img _src="images/m6.jpg" alt="" >
+	<img _src="images/m7.jpg" alt="" >
+	<img _src="images/m8.jpg" alt="" >
+	<img _src="images/m9.jpg" alt="" >
+	<img _src="images/m10.jpg" alt="" >
+	<img _src="images/m1.jpg" alt="" >
+	<img _src="images/m2.jpg" alt="" >
+	<img _src="images/m3.jpg" alt="" >
+	<img _src="images/m4.jpg" alt="" >
+	<img _src="images/m5.jpg" alt="" >
+	<img _src="images/m6.jpg" alt="" >
+	<img _src="images/m7.jpg" alt="" >
+	<img _src="images/m8.jpg" alt="" >
+	<img _src="images/m9.jpg" alt="" >
+	<img _src="images/m10.jpg" alt="" >
+</body>
+</html>

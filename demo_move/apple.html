@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>苹果菜单</title>
+<style>
+body {margin:0px; background:#000;}
+#div1 {text-align:center; position:absolute; bottom:0px; width:100%;}
+</style>
+<script>
+window.onload = function(){
+	document.onmousemove = function(ev){
+		var oEvent = ev||event;
+		var oDiv = document.getElementById('div1');
+		var aImg = oDiv.getElementsByTagName('img');
+			
+		
+		for(var i  = 0;i<aImg.length;i++){
+			var a = aImg[i].offsetLeft + oDiv.offsetLeft + aImg[i].offsetWidth/2 - oEvent.clientX;
+			var b = aImg[i].offsetTop + oDiv.offsetTop + aImg[i].offsetHeight/2 - oEvent.clientY;
+			//var c = Math.sqrt(Math.pow(a,2)+Math.pow(b,2));
+			var c = Math.sqrt(a*a+b*b);
+			//var scale =1 - c/500;
+			var scale = 1-c/500;			
+			(scale<0.5)&&(scale = 0.5);
+			aImg[i].style.width = scale*128+'px';
+		}
+		
+	};	
+};
+
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<img src="images/apple_1.png" width="64" />
+	<img src="images/apple_2.png" width="64" />
+	<img src="images/apple_3.png" width="64" />
+	<img src="images/apple_4.png" width="64" />
+	<img src="images/apple_5.png" width="64" />
+</div>
+</body>
+</html>

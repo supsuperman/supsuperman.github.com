@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+.logo{ height:100px;}
+.logo i{ background:url(../images/logo.png) no-repeat; float:left; width:82px; height:54px;}
+.logo h1{ text-indent:-9999em;}
+.main{ height:444px;}
+.l i{ background:url(../images/chatu.png) no-repeat; width:456px; height:390px; float:left;}
+.c{ margin-left:140px;}
+.phone{ margin-left:20px;}
+.zh{ position:relative;}
+.zh input{ width:258px; height:34px; border:1px solid #aaa; margin-top:15px; padding-left:33px;}
+.zh i{ background:url(../images/zhanghao.png) no-repeat; width:18px; height:17px; position:absolute; top:38px; left:9px;}
+.password{ position:relative;}
+.password input{ width:258px; height:34px; border:1px solid #aaa; margin-top:20px; padding-left:33px;}
+.password i{ background:url(../images/password.png) no-repeat; width:18px; height:17px; position:absolute; top:29px; left:9px;}
+.loading{ margin-top:15px;}
+.loading_l{ margin-right:10px;}
+.loading input{ width:20px; height:13px;}
+.forget{ margin-left:32px; color:#2bb8aa;}
+.sigin input{ width:294px; height:37px; background:#2ebdaf; margin-top:15px; color:#fff;}
+.zc{ margin-top:30px;}
+.zc a{ color:#2dbaac; padding-left:20px;}
+.hezuo{ margin-top:60px;}
+.hezuo li{ float:left; padding-right:20px;}
+.hezuo ul{ width:300px;}
+.hezuo a{ color:#999;}
+.hezuo p{ padding-bottom:10px;}
+.qq i{ background:url(../images/qq.png) no-repeat; width:15px; height:16px; float:left; padding-right:5px;}
+.zfb i{ background:url(../images/zfb.png) no-repeat; width:15px; height:16px; float:left; padding-right:5px;}
+.wb i{ background:url(../images/wb.png) no-repeat; width:15px; height:16px; float:left; padding-right:5px;}
+.bd i{ background:url(../images/bd.png) no-repeat; width:15px; height:16px; float:left; padding-right:5px;}
+.sll i{ background:url(../images/sll.png) no-repeat; width:15px; height:16px; float:left; padding-right:5px; padding-top:10px;}
+.sll{ margin-top:10px;}
+.more{ margin-top:10px; padding-left:19px;}
+.more a{ color:#2bb8aa;}
+.more i{ width:0; height:0; border:3px solid #fff; border-top:3px solid #2bb8aa; display:inline-block;}
+.r{ background:url(../images/erweima.png) no-repeat; width:116px; height:250px; float:left; margin-left:50px; margin-top:50px;}
+.footer{ border-top:1px solid #eee; border-bottom:1px solid #eee; height:50px; line-height:50px;}
+.footer li{ float:left; padding-right:20px;}
+.footer li a{ color:#999;}
+.footer a:hover{ color:#2bb8aa;}
+.sst{ padding-left:60px;}
+.sst i{ background:url(../images/tui.png) no-repeat; width:22px; height:23px; float:left; margin-top:10px; padding-left:5px;}
+.gqt i{ background:url(../images/gqt.png) no-repeat; width:22px; height:23px; float:left; margin-top:10px; padding-left:5px;}
+.bmy i{ background:url(../images/bmy.png) no-repeat; width:22px; height:23px; float:left; margin-top:10px; padding-left:5px;}
+.copyright{ margin-top:20px; color:#999;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
